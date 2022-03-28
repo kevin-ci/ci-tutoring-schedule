@@ -207,12 +207,10 @@
 
     <script>
         let contrast = localStorage.hasOwnProperty('contrast') ? localStorage.getItem('contrast') : localStorage.setItem('contrast', false);
-        console.log(contrast);
         if (typeof contrast == undefined) {
             contrast = "false"; // setItem "helpfully" returns undefined
         }
         else {
-            console.log("hello");
             contrast == "true" ? increaseContrast() : resetContrast();
         }
 
@@ -223,7 +221,6 @@
         }
 
         function increaseContrast() {
-            console.log("increase");
             let r = document.querySelector(':root');
             r.style.setProperty('--peak', '#FFC20A');
             r.style.setProperty('--standard', '#0C7BDC');
@@ -232,7 +229,6 @@
         }
 
         function resetContrast() {
-            console.log("decrease");
             let r = document.querySelector(':root');
             r.style.setProperty('--peak', '#93C47D');
             r.style.setProperty('--standard', '#34A853');
